@@ -1,0 +1,124 @@
+{{ define "main" }}
+{{ $p  := site.Params }}
+{{ $fp := $p.featuredPaper }}
+{{ $news := site.Data.news }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-name">Seth Li</h1>
+        <div class="hero-title">Dorman Family Term Distinguished Associate Professor</div>
+        <div class="hero-institution">Raymond A. Mason School of Business · William &amp; Mary</div>
+        <p class="hero-tagline">I study the unintended consequences of digital systems — how online platforms, social networks, and AI shape human decisions in ways that are often surprising, sometimes adverse, and always consequential.</p>
+        <div class="hero-actions">
+          <a href="{{ $p.googleScholar }}" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-8 10 8M6 12v8a2 2 0 002 2h8a2 2 0 002-2v-8"/></svg>
+            Google Scholar
+          </a>
+          <a href="{{ $p.orcid }}" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            ORCID
+          </a>
+          <a href="{{ $p.cvFile }}" class="btn btn-primary" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9,15 12,18 15,15"/></svg>
+            Download CV
+          </a>
+          <a href="mailto:{{ $p.email }}" class="btn btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="/img/headshot.webp" alt="Seth Li" width="180" height="180">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STREAM CARDS -->
+<section style="padding: 0 0 32px;">
+  <div class="container">
+    <span class="section-label">Research Streams</span>
+    {{ partial "stream-cards.html" (dict "isResearchPage" false) }}
+  </div>
+</section>
+
+<!-- FEATURED WORK + NEWS -->
+<section style="padding-bottom: 32px;">
+  <div class="container">
+    <div class="highlights-grid">
+
+      <div class="card">
+        <span class="section-label">Featured Work</span>
+        <div class="pub-badges" style="margin-bottom:10px;">
+          {{ if eq $fp.badge "FT50" }}<span class="badge badge-ft50">FT50</span>{{ end }}
+          {{ if eq $fp.badge "UTD"  }}<span class="badge badge-utd">UTD</span>{{ end }}
+          <span class="badge badge-s1">Digital Platforms</span>
+          {{ if $fp.impactFactor }}<span style="font-family:var(--font-sans);font-size:11px;color:var(--text-tertiary);margin-left:4px;">IF: {{ $fp.impactFactor }}</span>{{ end }}
+        </div>
+        <h3 class="featured-paper-title">
+          <a href="{{ $fp.doi }}" target="_blank" rel="noopener">{{ $fp.title }}</a>
+        </h3>
+        <div class="featured-paper-authors">{{ $fp.authors }}</div>
+        <div class="featured-paper-venue">{{ $fp.venue }} · {{ $fp.venueDetail }}</div>
+        <div class="featured-paper-summary">{{ $fp.summary }}</div>
+      </div>
+
+      <div class="card">
+        <span class="section-label">News &amp; Updates</span>
+        {{ range $news }}
+        <div class="news-item">
+          <div class="news-icon">
+            {{ if eq .type "award" }}
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+            {{ else if eq .type "publication" }}
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+            {{ else if eq .type "grant" }}
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            {{ else }}
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            {{ end }}
+          </div>
+          <div>
+            <div class="news-text">{{ .text }}</div>
+            <div class="news-date">{{ dateFormat "January 2006" .date }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section style="padding-bottom: 60px;">
+  <div class="container">
+    <div class="card" style="padding:0; overflow:hidden;">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">{{ $p.stats.papers }}</div>
+          <div class="stat-label">Peer-reviewed Journal Articles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ $p.stats.teachingEval }}</div>
+          <div class="stat-label">Avg. Teaching Eval</div>
+          <div class="stat-sublabel">{{ $p.stats.teachingNote }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ $p.stats.citations }}</div>
+          <div class="stat-label">Google Scholar Citations</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ $p.stats.editorial }}</div>
+          <div class="stat-label">{{ $p.stats.editorialNote }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

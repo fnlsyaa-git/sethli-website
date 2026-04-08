@@ -1,0 +1,174 @@
+{{ define "main" }}
+{{ $pubs     := site.Data.publications }}
+{{ $published := where $pubs "status" "published" }}
+{{ $working   := where $pubs "status" "ne" "published" }}
+{{ $talks     := where site.Data.talks "show_on_site" true }}
+{{ $service   := site.Data.service }}
+
+<div class="page-content">
+  <div class="container stack stack-24">
+
+    <!-- A: RESEARCH STATEMENT -->
+    <div class="card">
+      <span class="section-label">Research Statement</span>
+      <p>My research investigates the behavioral consequences of digital systems — specifically, how the design of online platforms, social networks, and AI-powered tools shapes human cognition, decision-making, and social dynamics in ways that are frequently unintended. I study these phenomena through three interlocking research streams, combining behavioral experimentation, econometric analysis, and computational methods.</p>
+    </div>
+
+    <!-- B: CURRENT DIRECTION -->
+    <div class="card">
+      <div class="current-direction">
+        <div class="current-direction-header">
+          <svg class="current-direction-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+          <span class="section-label" style="margin-bottom:0;">Current Research Direction</span>
+        </div>
+        <p>Investigating how generative AI reshapes human decision-making, creative behavior, and social polarization. Active projects include the impact of algorithmic knowledge on content creator behavior (under review, <em>Information Technology &amp; People</em>), and how AI can bridge social divides (AI Initiatives Grant, William &amp; Mary 2024, with R. Kohli).</p>
+      </div>
+    </div>
+
+    <!-- C: STREAM CARDS -->
+    <div>
+      <span class="section-label">Research Streams</span>
+      {{ partial "stream-cards.html" (dict "isResearchPage" true) }}
+    </div>
+
+    <!-- D: PUBLICATION LIST -->
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+        <span class="section-label" style="margin-bottom:0;">Publications</span>
+        <div class="pub-filters">
+          <button class="pub-filter-btn" data-filter="all"  aria-pressed="true">All</button>
+          <button class="pub-filter-btn" data-filter="s1"   aria-pressed="false">Digital Platforms</button>
+          <button class="pub-filter-btn" data-filter="s2"   aria-pressed="false">Social Networks</button>
+          <button class="pub-filter-btn" data-filter="s3"   aria-pressed="false">Org Networks</button>
+        </div>
+      </div>
+
+      <div class="pub-divider">Published Papers</div>
+      <span id="stream-s1" class="pub-stream-anchor"></span>
+
+      {{ $s2anchor := false }}
+      {{ $s3anchor := false }}
+      {{ range $published }}
+      {{ $stream := .stream }}
+      {{ if and (eq $stream "s2") (not $s2anchor) }}
+        <span id="stream-s2" class="pub-stream-anchor"></span>
+        {{ $s2anchor = true }}
+      {{ end }}
+      {{ if and (eq $stream "s3") (not $s3anchor) }}
+        <span id="stream-s3" class="pub-stream-anchor"></span>
+        {{ $s3anchor = true }}
+      {{ end }}
+      <div class="pub-entry {{ $stream }}" data-stream="{{ $stream }}">
+        <div class="pub-title">
+          {{ if .doi }}<a href="{{ .doi }}" target="_blank" rel="noopener">{{ .title }}</a>
+          {{ else }}{{ .title }}{{ end }}
+        </div>
+        <div class="pub-authors">{{ .authors }}</div>
+        <div class="pub-venue">
+          {{ .venue }}{{ if .year }}, {{ .year }}{{ end }}{{ if .volume }}, Vol. {{ .volume }}{{ end }}{{ if .issue }}, No. {{ .issue }}{{ end }}
+          {{ if .impact_factor }}<span class="pub-venue-if"> · IF: {{ .impact_factor }}</span>{{ end }}
+        </div>
+        <div class="pub-badges">
+          {{ if eq .badges "FT50" }}<span class="badge badge-ft50">FT50</span>{{ end }}
+          {{ if eq .badges "UTD"  }}<span class="badge badge-utd">UTD</span>{{ end }}
+          {{ if eq $stream "s1" }}<span class="badge badge-s1">Digital Platforms</span>{{ end }}
+          {{ if eq $stream "s2" }}<span class="badge badge-s2">Social Networks</span>{{ end }}
+          {{ if eq $stream "s3" }}<span class="badge badge-s3">Org Networks</span>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      <div class="pub-divider" style="margin-top:8px;">Working Papers &amp; Pipeline</div>
+      {{ range $working }}
+      {{ $stream := .stream }}
+      {{ $statusLabel := "" }}{{ $statusClass := "" }}
+      {{ if eq .status "rar4"         }}{{ $statusLabel = "R&R · Rd 4"  }}{{ $statusClass = "badge-rar4"     }}{{ end }}
+      {{ if eq .status "rar2"         }}{{ $statusLabel = "R&R · Rd 2"  }}{{ $statusClass = "badge-rar2"     }}{{ end }}
+      {{ if eq .status "under-review" }}{{ $statusLabel = "Under Review" }}{{ $statusClass = "badge-review"   }}{{ end }}
+      {{ if eq .status "in-progress"  }}{{ $statusLabel = "In Progress"  }}{{ $statusClass = "badge-progress" }}{{ end }}
+      <div class="pub-entry {{ $stream }}" data-stream="{{ $stream }}">
+        <div class="pub-title">{{ .title }}</div>
+        <div class="pub-authors">{{ .authors }}</div>
+        <div class="pub-venue">{{ .venue }}</div>
+        <div class="pub-badges">
+          {{ if eq .badges "FT50" }}<span class="badge badge-ft50">FT50</span>{{ end }}
+          {{ if eq .badges "UTD"  }}<span class="badge badge-utd">UTD</span>{{ end }}
+          {{ if eq $stream "s1" }}<span class="badge badge-s1">Digital Platforms</span>{{ end }}
+          {{ if eq $stream "s2" }}<span class="badge badge-s2">Social Networks</span>{{ end }}
+          {{ if eq $stream "s3" }}<span class="badge badge-s3">Org Networks</span>{{ end }}
+          {{ if $statusLabel }}<span class="badge {{ $statusClass }}">{{ $statusLabel }}</span>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- E: OTHER PUBLICATIONS -->
+    <div class="card">
+      <span class="section-label">Other Publications</span>
+      <ul class="other-pubs">
+        <li>Li, S., Boudreau, M., Huber, M., &amp; Watson, R. (2013). Sustainability Performance and CSR Disclosure: The Missing Link. <em>International Journal of Social Ecology &amp; Sustainable Development.</em></li>
+        <li>Watson, R., Boudreau, M., Li, S., &amp; Levis, J. (2010). Telematics at UPS: En Route to Energy Informatics. <em>MIS Quarterly Executive.</em> <strong>[First Place, SIM Best Paper Award 2009]</strong></li>
+      </ul>
+    </div>
+
+    <!-- F: RECENT TALKS (hidden when empty) -->
+    {{ if $talks }}
+    <div class="card">
+      <span class="section-label">Recent Talks</span>
+      {{ range first 5 $talks }}
+      <div class="talk-item">
+        <div class="talk-title">{{ .title }}</div>
+        <div class="talk-meta">{{ .venue }} · {{ dateFormat "2006" .date }}{{ with .coauthors }} · {{ . }}{{ end }}</div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- G: ACADEMIC SERVICE -->
+    <div class="card">
+      <span class="section-label">Academic Service</span>
+      <div class="service-grid">
+        <div>
+          <div class="section-label" style="font-size:11px; margin-bottom:12px;">Editorial Roles</div>
+          {{ range $service.editorial_roles }}
+          <div class="service-item">
+            <div class="service-role">{{ .role }}</div>
+            <div class="service-journal">{{ .journal }}</div>
+            <div class="service-years">{{ .years }}</div>
+          </div>
+          {{ end }}
+        </div>
+        <div>
+          <div class="section-label" style="font-size:11px; margin-bottom:12px;">Awards &amp; Honors</div>
+          {{ range $service.awards }}
+          <div class="award-item">
+            <div class="award-name">{{ .name }}</div>
+            <div class="award-org">{{ .org }} · {{ .year }}</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var btns = document.querySelectorAll('.pub-filter-btn');
+  var entries = document.querySelectorAll('.pub-entry');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = this.dataset.filter;
+      btns.forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+      this.setAttribute('aria-pressed', 'true');
+      entries.forEach(function(e) {
+        e.style.display = (filter === 'all' || e.dataset.stream === filter) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+{{ end }}
