@@ -1,0 +1,27 @@
+editorial_roles:
+  - role: "Associate Editor"
+    journal: "MIS Quarterly"
+    years: "2026–present"
+  - role: "Associate Editor"
+    journal: "Journal of the Association for Information Systems"
+    years: "2026–present"
+  - role: "Associate Editor"
+    journal: "Decision Support Systems"
+    years: "2025–present"
+  - role: "Editorial Board"
+    journal: "AIS Transactions on Human-Computer Interaction"
+    years: "2025–present"
+
+awards:
+  - name: "Best Reviewer of the Year"
+    org: "Journal of AIS"
+    year: 2024
+  - name: "Best Reviewer Award"
+    org: "AIS THCI"
+    year: 2023
+  - name: "Dean's Research Fellow"
+    org: "William & Mary"
+    year: "2021–2025"
+  - name: "Best Accepted Paper"
+    org: "Academy of Management"
+    year: 2017

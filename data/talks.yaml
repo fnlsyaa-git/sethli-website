@@ -1,0 +1,8 @@
+# Set show_on_site: true to make the Talks section appear on the Research page.
+- title: "Bridging the Social Divide: How Generative AI Can Foster Understanding and Reduce Polarization"
+  type: "invited"
+  venue: "Brownbag Series, Mason School of Business, William & Mary"
+  location: "Williamsburg, VA"
+  date: "2025-03-15"
+  coauthors: "with R. Kohli"
+  show_on_site: false

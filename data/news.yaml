@@ -1,0 +1,14 @@
+- icon: "award"
+  text: "Best Reviewer of the Year (2024) — Journal of Association for Information Systems"
+  date: "2024-12-01"
+  type: "award"
+
+- icon: "paper"
+  text: "R&R · Round 4 at MIS Quarterly — contrarian behavior in online marketplaces"
+  date: "2024-09-01"
+  type: "publication"
+
+- icon: "grant"
+  text: "AI Initiatives Grant awarded — Raymond A. Mason School of Business, 2024"
+  date: "2024-06-01"
+  type: "grant"

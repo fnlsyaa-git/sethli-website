@@ -1,0 +1,45 @@
+wm:
+  institution: "William & Mary"
+  years: "2018 – present"
+  courses:
+    - code: "BUAD6271"
+      title: "Data Management"
+      levels: "FT-MBA · PT-MBA · OMSBA"
+      sections: 9
+      avg_eval: "4.85"
+      max_eval: "5.0"
+    - code: "BUAD5732"
+      title: "Data Visualization"
+      levels: "MSBA"
+      sections: 6
+      avg_eval: "4.82"
+      max_eval: "5.0"
+    - code: "BUAD5762"
+      title: "Business Analytics Capstone"
+      levels: "MSBA · OMSBA"
+      sections: 2
+      avg_eval: "4.81"
+      max_eval: "5.0"
+    - code: "BUAD466"
+      title: "Developing Business Intelligence"
+      levels: "BBA"
+      sections: 5
+      avg_eval: "4.51"
+      max_eval: "5.0"
+
+clemson:
+  institution: "Clemson University"
+  years: "2013 – 2018"
+  courses:
+    - code: "MGT4560"
+      title: "Business Data Management"
+      levels: "BBA"
+      sections: 8
+      avg_eval: "4.6"
+      max_eval: "5.0"
+    - code: "MGT3500"
+      title: "Intro to Business Analytics"
+      levels: "BBA"
+      sections: 7
+      avg_eval: "4.5"
+      max_eval: "5.0"
