@@ -226,11 +226,11 @@ h1, h2, h3, h4 {
   max-width: 560px;
 }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.hero-photo img { width: 180px; height: 180px; border-radius: 10px; object-fit: cover; }
+.hero-photo img { width: 240px; height: 240px; border-radius: 10px; object-fit: cover; }
 @media (max-width: 768px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-photo { order: -1; }
-  .hero-photo img { width: 120px; height: 120px; }
+  .hero-photo img { width: 160px; height: 160px; }
 }
 
 /* =====================================================
