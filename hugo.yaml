@@ -7,7 +7,7 @@ disableKinds:
   - term
 
 params:
-  description: "Seth Li — Dorman Family Term Distinguished Associate Professor, Raymond A. Mason School of Business, William & Mary. Research on digital platforms, social networks, and AI."
+  description: "Seth Li — Dorman Family Distinguished Associate Professor, Raymond A. Mason School of Business, William & Mary. Research on digital platforms, social networks, and AI."
   email: "seth.li@mason.wm.edu"
   googleScholar: "https://scholar.google.com/citations?user=V4k8OsIAAAAJ&hl=en"
   orcid: "https://orcid.org/0000-0002-0336-9220"
