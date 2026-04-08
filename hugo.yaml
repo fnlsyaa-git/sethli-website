@@ -24,7 +24,7 @@ params:
     authors: "London, J., Li, S., & Sun, H."
     venue: "Information Systems Research"
     venueDetail: "2022"
-    doi: ""
+    doi: "https://doi.org/10.1287/isre.2021.1095"
     badge: "FT50"
     impactFactor: "9.2"
     stream: "s2"
