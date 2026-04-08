@@ -56,9 +56,9 @@
         <div class="pub-badges" style="margin-bottom:10px;">
           {{ if eq $fp.badge "FT50" }}<span class="badge badge-ft50">FT50</span>{{ end }}
           {{ if eq $fp.badge "UTD"  }}<span class="badge badge-utd">UTD</span>{{ end }}
-          {{ if eq $fp.stream "s1" }}<span class="badge badge-s1">Digital Platforms</span>{{ end }}
-          {{ if eq $fp.stream "s2" }}<span class="badge badge-s2">Social Networks</span>{{ end }}
-          {{ if eq $fp.stream "s3" }}<span class="badge badge-s3">Org Networks</span>{{ end }}
+          {{ if eq $fp.stream "s1" }}<a href="/research/?stream=s1" class="badge badge-s1">Digital Platforms</a>{{ end }}
+          {{ if eq $fp.stream "s2" }}<a href="/research/?stream=s2" class="badge badge-s2">Social Networks</a>{{ end }}
+          {{ if eq $fp.stream "s3" }}<a href="/research/?stream=s3" class="badge badge-s3">Org Networks</a>{{ end }}
           {{ if $fp.impactFactor }}<span style="font-family:var(--font-sans);font-size:11px;color:var(--text-tertiary);margin-left:4px;">IF: {{ $fp.impactFactor }}</span>{{ end }}
         </div>
         <h3 class="featured-paper-title">
