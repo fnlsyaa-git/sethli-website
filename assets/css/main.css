@@ -358,6 +358,9 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .current-direction { border-left: 4px solid var(--blue); padding-left: 20px; }
 .current-direction-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .current-direction-icon { color: var(--blue); }
+.page-jump-nav { display: flex; gap: 20px; font-family: var(--font-sans); font-size: 13px; padding: 8px 0; flex-wrap: wrap; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+.page-jump-nav a { color: var(--text-secondary); text-decoration: none; }
+.page-jump-nav a:hover { color: var(--blue); }
 
 /* =====================================================
    TEACHING

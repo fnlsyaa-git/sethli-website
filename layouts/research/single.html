@@ -27,14 +27,16 @@
       </div>
     </div>
 
-    <!-- C: STREAM CARDS -->
-    <div>
-      <span class="section-label">Research Streams</span>
-      {{ partial "stream-cards.html" (dict "isResearchPage" true) }}
+    <!-- JUMP NAV -->
+    <div class="page-jump-nav">
+      <span style="color:var(--text-tertiary); font-weight:600;">Jump to:</span>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#service">Service</a>
     </div>
 
     <!-- D: PUBLICATION LIST -->
-    <div class="card">
+    <div class="card" id="publications">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
         <span class="section-label" style="margin-bottom:0;">Publications</span>
         <div class="pub-filters">
@@ -115,7 +117,7 @@
 
     <!-- F: RECENT TALKS (hidden when empty) -->
     {{ if $talks }}
-    <div class="card">
+    <div class="card" id="talks">
       <span class="section-label">Recent Talks</span>
       {{ range first 5 $talks }}
       <div class="talk-item">
@@ -127,7 +129,7 @@
     {{ end }}
 
     <!-- G: ACADEMIC SERVICE -->
-    <div class="card">
+    <div class="card" id="service">
       <span class="section-label">Academic Service</span>
       <div class="service-grid">
         <div>
