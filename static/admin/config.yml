@@ -1,0 +1,89 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/sethli-website
+  branch: main
+  base_url: https://sveltia-cms-auth.pages.dev
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: publications
+    label: Publications
+    files:
+      - name: all
+        label: All Publications
+        file: data/publications.yaml
+        fields:
+          - label: Publications
+            name: ""
+            widget: list
+            fields:
+              - { label: Title,         name: title,         widget: string }
+              - { label: Authors,       name: authors,       widget: string }
+              - { label: Venue,         name: venue,         widget: string }
+              - { label: Year,          name: year,          widget: number,   required: false }
+              - { label: Volume,        name: volume,        widget: string,   required: false }
+              - { label: Issue,         name: issue,         widget: string,   required: false }
+              - { label: DOI,           name: doi,           widget: string,   required: false }
+              - { label: Stream,        name: stream,        widget: select,   options: [s1, s2, s3] }
+              - { label: Status,        name: status,        widget: select,   options: [published, rar4, rar2, under-review, in-progress] }
+              - { label: Badges,        name: badges,        widget: select,   options: ["", FT50, UTD], required: false }
+              - { label: Impact Factor, name: impact_factor, widget: string,   required: false }
+
+  - name: news
+    label: News Strip
+    files:
+      - name: all
+        label: News Items
+        file: data/news.yaml
+        fields:
+          - label: News
+            name: ""
+            widget: list
+            fields:
+              - { label: Text, name: text, widget: string }
+              - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD, time_format: false }
+              - { label: Type, name: type, widget: select, options: [award, publication, grant, talk, other] }
+              - { label: Icon, name: icon, widget: select, options: [award, paper, grant, talk, other] }
+
+  - name: talks
+    label: Talks
+    files:
+      - name: all
+        label: All Talks
+        file: data/talks.yaml
+        fields:
+          - label: Talks
+            name: ""
+            widget: list
+            fields:
+              - { label: Title,        name: title,        widget: string }
+              - { label: Type,         name: type,         widget: select, options: [invited, conference, workshop, keynote] }
+              - { label: Venue,        name: venue,        widget: string }
+              - { label: Location,     name: location,     widget: string,  required: false }
+              - { label: Date,         name: date,         widget: datetime, format: YYYY-MM-DD, time_format: false }
+              - { label: Co-authors,   name: coauthors,    widget: string,  required: false }
+              - { label: Show on site, name: show_on_site, widget: boolean, default: true }
+
+  - name: service
+    label: Academic Service
+    files:
+      - name: all
+        label: Service & Awards
+        file: data/service.yaml
+        fields:
+          - label: Editorial Roles
+            name: editorial_roles
+            widget: list
+            fields:
+              - { label: Role,    name: role,    widget: string }
+              - { label: Journal, name: journal, widget: string }
+              - { label: Years,   name: years,   widget: string }
+          - label: Awards
+            name: awards
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Org,  name: org,  widget: string }
+              - { label: Year, name: year, widget: string }
