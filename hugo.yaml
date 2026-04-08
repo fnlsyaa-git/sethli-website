@@ -1,0 +1,46 @@
+baseURL: 'https://sethli.net/'
+languageCode: 'en-us'
+title: 'Seth Li'
+enableRobotsTXT: true
+
+params:
+  description: "Seth Li — Dorman Family Term Distinguished Associate Professor, Raymond A. Mason School of Business, William & Mary. Research on digital platforms, social networks, and AI."
+  email: "seth.li@mason.wm.edu"
+  googleScholar: "https://scholar.google.com/citations?user=PLACEHOLDER"
+  orcid: "https://orcid.org/PLACEHOLDER"
+  cvFile: "/cv/seth_li_cv.pdf"
+  stats:
+    papers: "10"
+    teachingEval: "4.8/5.0"
+    teachingNote: "40+ sections"
+    citations: "357+"
+    editorial: "AE ×3"
+    editorialNote: "Associate Editor MISQ · JAIS · DSS"
+  featuredPaper:
+    title: "Can Positive Online Social Cues Always Reduce User Avoidance of Sponsored Search Results?"
+    authors: "Deng, H., Wang, W., Li, S., & Lim, K."
+    venue: "MIS Quarterly"
+    venueDetail: "Vol. 46, Issue 1, 2022"
+    doi: "https://doi.org/10.25300/MISQ/2022/16349"
+    badge: "FT50"
+    impactFactor: "11.0"
+    stream: "s1"
+    summary: "Shows that positive social cues — likes, shares, endorsements — can paradoxically increase user avoidance of sponsored search results when users perceive manipulation, challenging standard persuasion models."
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Research
+      url: /research/
+      weight: 2
+    - name: Teaching
+      url: /teaching/
+      weight: 3
+    - name: CV
+      url: /cv/
+      weight: 4
+    - name: Contact
+      url: /contact/
+      weight: 5
