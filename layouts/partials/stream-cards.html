@@ -1,5 +1,5 @@
 {{ $isResearch := .isResearchPage }}
-{{ $pubs := hugo.Data.publications }}
+{{ $pubs := hugo.Data.publications.publications }}
 {{ $s1all := where $pubs "stream" "s1" }}
 {{ $s2all := where $pubs "stream" "s2" }}
 {{ $s3all := where $pubs "stream" "s3" }}

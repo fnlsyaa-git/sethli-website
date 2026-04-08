@@ -16,7 +16,7 @@ collections:
         file: data/publications.yaml
         fields:
           - label: Publications
-            name: ""
+            name: publications
             widget: list
             fields:
               - { label: Title,         name: title,         widget: string }
@@ -39,7 +39,7 @@ collections:
         file: data/news.yaml
         fields:
           - label: News
-            name: ""
+            name: news
             widget: list
             fields:
               - { label: Text, name: text, widget: string }
@@ -55,7 +55,7 @@ collections:
         file: data/talks.yaml
         fields:
           - label: Talks
-            name: ""
+            name: talks
             widget: list
             fields:
               - { label: Title,        name: title,        widget: string }

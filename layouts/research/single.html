@@ -1,8 +1,8 @@
 {{ define "main" }}
-{{ $pubs     := hugo.Data.publications }}
+{{ $pubs     := hugo.Data.publications.publications }}
 {{ $published := where $pubs "status" "published" }}
 {{ $working   := where $pubs "status" "ne" "published" }}
-{{ $talks     := where hugo.Data.talks "show_on_site" true }}
+{{ $talks     := where hugo.Data.talks.talks "show_on_site" true }}
 {{ $service   := hugo.Data.service }}
 
 <div class="page-content">
