@@ -1,9 +1,9 @@
 {{ define "main" }}
-{{ $pubs     := site.Data.publications }}
+{{ $pubs     := hugo.Data.publications }}
 {{ $published := where $pubs "status" "published" }}
 {{ $working   := where $pubs "status" "ne" "published" }}
-{{ $talks     := where site.Data.talks "show_on_site" true }}
-{{ $service   := site.Data.service }}
+{{ $talks     := where hugo.Data.talks "show_on_site" true }}
+{{ $service   := hugo.Data.service }}
 
 <div class="page-content">
   <div class="container stack stack-24">

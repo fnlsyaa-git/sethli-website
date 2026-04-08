@@ -2,6 +2,9 @@ baseURL: 'https://sethli.net/'
 languageCode: 'en-us'
 title: 'Seth Li'
 enableRobotsTXT: true
+disableKinds:
+  - taxonomy
+  - term
 
 params:
   description: "Seth Li — Dorman Family Term Distinguished Associate Professor, Raymond A. Mason School of Business, William & Mary. Research on digital platforms, social networks, and AI."
