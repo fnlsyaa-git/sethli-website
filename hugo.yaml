@@ -11,6 +11,7 @@ params:
   email: "seth.li@mason.wm.edu"
   googleScholar: "https://scholar.google.com/citations?user=V4k8OsIAAAAJ&hl=en"
   orcid: "https://orcid.org/0000-0002-0336-9220"
+  cvLastUpdated: "January 2026"
   cvFile: "/cv/seth_li_cv.pdf"
   stats:
     papers: "10"

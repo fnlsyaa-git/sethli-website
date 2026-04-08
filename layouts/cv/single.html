@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $p := site.Params }}
+{{ $service := hugo.Data.service }}
 
 <div class="page-content">
   <div class="container stack stack-24">
@@ -9,7 +10,7 @@
       <div class="download-bar">
         <div class="download-bar-left">
           <h2>Curriculum Vitae</h2>
-          <p>Last updated: January 2026</p>
+          <p>Last updated: {{ $p.cvLastUpdated }}</p>
         </div>
         <div class="download-bar-right">
           <a href="{{ $p.googleScholar }}" class="btn btn-outline" target="_blank" rel="noopener">View Google Scholar →</a>
@@ -77,6 +78,32 @@
         <div class="grant-item">
           <div class="grant-name">Singapore MOE Tier 1</div>
           <div class="grant-detail">Ministry of Education Singapore · 2014 · ~US$64,000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE & AWARDS -->
+    <div class="card">
+      <span class="section-label">Academic Service &amp; Awards</span>
+      <div class="service-grid">
+        <div>
+          <div class="section-label" style="font-size:11px; margin-bottom:12px;">Editorial Roles</div>
+          {{ range $service.editorial_roles }}
+          <div class="service-item">
+            <div class="service-role">{{ .role }}</div>
+            <div class="service-journal">{{ .journal }}</div>
+            <div class="service-years">{{ .years }}</div>
+          </div>
+          {{ end }}
+        </div>
+        <div>
+          <div class="section-label" style="font-size:11px; margin-bottom:12px;">Awards &amp; Honors</div>
+          {{ range $service.awards }}
+          <div class="award-item">
+            <div class="award-name">{{ .name }}</div>
+            <div class="award-org">{{ .org }} · {{ .year }}</div>
+          </div>
+          {{ end }}
         </div>
       </div>
     </div>
