@@ -2,7 +2,11 @@
   <div class="container">
     <div class="footer-inner">
       <span>© {{ now.Year }} Seth Li · William &amp; Mary</span>
-      <span><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></span>
+      <span>
+        <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+        &nbsp;·&nbsp;
+        <a href="{{ site.Params.orcid }}" target="_blank" rel="noopener">ORCID</a>
+      </span>
     </div>
   </div>
 </footer>
