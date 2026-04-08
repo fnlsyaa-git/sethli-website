@@ -348,6 +348,7 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .pub-title a:hover { color: var(--blue); }
 .pub-authors { font-family: var(--font-sans); font-size: 13px; color: #999; margin-bottom: 4px; }
 .pub-venue { font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); font-style: italic; margin-bottom: 6px; }
+.pub-venue-name { color: var(--text); font-weight: 600; font-style: normal; }
 .pub-venue-if { font-style: normal; color: var(--text-tertiary); }
 .pub-badges { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
 .pub-stream-anchor { display: block; height: 0; visibility: hidden; position: relative; top: -80px; }

@@ -61,7 +61,7 @@
           <a href="{{ $fp.doi }}" target="_blank" rel="noopener">{{ $fp.title }}</a>
         </h3>
         <div class="featured-paper-authors">{{ $fp.authors }}</div>
-        <div class="featured-paper-venue">{{ $fp.venue }} · {{ $fp.venueDetail }}</div>
+        <div class="featured-paper-venue"><span class="pub-venue-name">{{ $fp.venue }}</span> · {{ $fp.venueDetail }}</div>
         <div class="featured-paper-summary">{{ $fp.summary }}</div>
         <div style="margin-top:16px;">
           <a href="/research/" style="font-family:var(--font-sans);font-size:13px;font-weight:600;">View all research →</a>
