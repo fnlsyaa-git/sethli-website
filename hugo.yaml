@@ -20,15 +20,15 @@ params:
     editorial: "AE ×3"
     editorialNote: "Associate Editor MISQ · JAIS · DSS"
   featuredPaper:
-    title: "Can Positive Online Social Cues Always Reduce User Avoidance of Sponsored Search Results?"
-    authors: "Deng, H., Wang, W., Li, S., & Lim, K."
-    venue: "MIS Quarterly"
-    venueDetail: "Vol. 46, Issue 1, 2022"
-    doi: "https://doi.org/10.25300/MISQ/2022/16349"
+    title: "Seems Legit: An Investigation of the Assessing and Sharing of Unverifiable Messages on Online Social Networks"
+    authors: "London, J., Li, S., & Sun, H."
+    venue: "Information Systems Research"
+    venueDetail: "2022"
+    doi: ""
     badge: "FT50"
-    impactFactor: "11.0"
-    stream: "s1"
-    summary: "Shows that positive social cues — likes, shares, endorsements — can paradoxically increase user avoidance of sponsored search results when users perceive manipulation, challenging standard persuasion models."
+    impactFactor: "9.2"
+    stream: "s2"
+    summary: "Investigates how people assess and share unverifiable messages on social networks — finding that network structure and social cues systematically shape both credulity and sharing behavior, with direct implications for how misinformation propagates online."
 
 menu:
   main:
