@@ -73,9 +73,9 @@
         <div class="pub-badges">
           {{ if eq .badges "FT50" }}<span class="badge badge-ft50">FT50</span>{{ end }}
           {{ if eq .badges "UTD"  }}<span class="badge badge-utd">UTD</span>{{ end }}
-          {{ if eq $stream "s1" }}<span class="badge badge-s1">Digital Platforms</span>{{ end }}
-          {{ if eq $stream "s2" }}<span class="badge badge-s2">Social Networks</span>{{ end }}
-          {{ if eq $stream "s3" }}<span class="badge badge-s3">Org Networks</span>{{ end }}
+          {{ if eq $stream "s1" }}<a href="?stream=s1" class="badge badge-s1">Digital Platforms</a>{{ end }}
+          {{ if eq $stream "s2" }}<a href="?stream=s2" class="badge badge-s2">Social Networks</a>{{ end }}
+          {{ if eq $stream "s3" }}<a href="?stream=s3" class="badge badge-s3">Org Networks</a>{{ end }}
         </div>
       </div>
       {{ end }}
@@ -95,9 +95,9 @@
         <div class="pub-badges">
           {{ if eq .badges "FT50" }}<span class="badge badge-ft50">FT50</span>{{ end }}
           {{ if eq .badges "UTD"  }}<span class="badge badge-utd">UTD</span>{{ end }}
-          {{ if eq $stream "s1" }}<span class="badge badge-s1">Digital Platforms</span>{{ end }}
-          {{ if eq $stream "s2" }}<span class="badge badge-s2">Social Networks</span>{{ end }}
-          {{ if eq $stream "s3" }}<span class="badge badge-s3">Org Networks</span>{{ end }}
+          {{ if eq $stream "s1" }}<a href="?stream=s1" class="badge badge-s1">Digital Platforms</a>{{ end }}
+          {{ if eq $stream "s2" }}<a href="?stream=s2" class="badge badge-s2">Social Networks</a>{{ end }}
+          {{ if eq $stream "s3" }}<a href="?stream=s3" class="badge badge-s3">Org Networks</a>{{ end }}
           {{ if $statusLabel }}<span class="badge {{ $statusClass }}">{{ $statusLabel }}</span>{{ end }}
         </div>
       </div>
@@ -159,16 +159,27 @@
 (function() {
   var btns = document.querySelectorAll('.pub-filter-btn');
   var entries = document.querySelectorAll('.pub-entry');
+
+  function applyFilter(filter) {
+    btns.forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+    var active = document.querySelector('.pub-filter-btn[data-filter="' + filter + '"]');
+    if (active) active.setAttribute('aria-pressed', 'true');
+    entries.forEach(function(e) {
+      e.style.display = (filter === 'all' || e.dataset.stream === filter) ? '' : 'none';
+    });
+  }
+
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var filter = this.dataset.filter;
-      btns.forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
-      this.setAttribute('aria-pressed', 'true');
-      entries.forEach(function(e) {
-        e.style.display = (filter === 'all' || e.dataset.stream === filter) ? '' : 'none';
-      });
+      history.replaceState(null, '', filter === 'all' ? location.pathname : '?stream=' + filter);
+      applyFilter(filter);
     });
   });
+
+  // Apply filter from URL param on page load
+  var param = new URLSearchParams(location.search).get('stream');
+  if (param) applyFilter(param);
 })();
 </script>
 {{ end }}

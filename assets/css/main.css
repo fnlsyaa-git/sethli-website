@@ -176,7 +176,9 @@ h1, h2, h3, h4 {
   border-radius: 4px;
   vertical-align: middle;
   line-height: 1.6;
+  text-decoration: none;
 }
+a.badge:hover { text-decoration: none; opacity: 0.8; }
 .badge-ft50     { background: #fff3cd; color: #7a5b00; }
 .badge-utd      { background: #d1ecf1; color: #0c5460; }
 .badge-s1       { background: #eef6ff; color: var(--s1); }
