@@ -44,6 +44,7 @@
           <button class="pub-filter-btn" data-filter="s1"   aria-pressed="false">Digital Platforms</button>
           <button class="pub-filter-btn" data-filter="s2"   aria-pressed="false">Social Networks</button>
           <button class="pub-filter-btn" data-filter="s3"   aria-pressed="false">Org Networks</button>
+          <button class="pub-filter-btn" data-filter="s4"   aria-pressed="false">Interdisciplinary</button>
         </div>
       </div>
 
@@ -78,6 +79,8 @@
           {{ if eq $stream "s1" }}<a href="?stream=s1" class="badge badge-s1">Digital Platforms</a>{{ end }}
           {{ if eq $stream "s2" }}<a href="?stream=s2" class="badge badge-s2">Social Networks</a>{{ end }}
           {{ if eq $stream "s3" }}<a href="?stream=s3" class="badge badge-s3">Org Networks</a>{{ end }}
+          {{ if eq $stream "s4" }}<a href="?stream=s4" class="badge badge-s4">Interdisciplinary</a>{{ end }}
+          {{ if .award }}<span class="badge badge-ft50">{{ .award }}</span>{{ end }}
         </div>
       </div>
       {{ end }}
@@ -100,19 +103,11 @@
           {{ if eq $stream "s1" }}<a href="?stream=s1" class="badge badge-s1">Digital Platforms</a>{{ end }}
           {{ if eq $stream "s2" }}<a href="?stream=s2" class="badge badge-s2">Social Networks</a>{{ end }}
           {{ if eq $stream "s3" }}<a href="?stream=s3" class="badge badge-s3">Org Networks</a>{{ end }}
+          {{ if eq $stream "s4" }}<a href="?stream=s4" class="badge badge-s4">Interdisciplinary</a>{{ end }}
           {{ if $statusLabel }}<span class="badge {{ $statusClass }}">{{ $statusLabel }}</span>{{ end }}
         </div>
       </div>
       {{ end }}
-    </div>
-
-    <!-- E: OTHER PUBLICATIONS -->
-    <div class="card">
-      <span class="section-label">Other Publications</span>
-      <ul class="other-pubs">
-        <li>Li, S., Boudreau, M., Huber, M., &amp; Watson, R. (2013). Sustainability Performance and CSR Disclosure: The Missing Link. <em>International Journal of Social Ecology &amp; Sustainable Development.</em></li>
-        <li>Watson, R., Boudreau, M., Li, S., &amp; Levis, J. (2010). Telematics at UPS: En Route to Energy Informatics. <em>MIS Quarterly Executive.</em> <span class="badge badge-ft50" style="vertical-align:middle; margin-left:4px;">🏆 SIM Best Paper 2009</span></li>
-      </ul>
     </div>
 
     <!-- F: RECENT TALKS (hidden when empty) -->

@@ -7,6 +7,7 @@
   --s1:             #2E6DA4;
   --s2:             #1A7A8A;
   --s3:             #5B4A8A;
+  --s4:             #7A6040;
   --bg:             #f5f7fa;
   --card:           #ffffff;
   --text:           #1a1a2e;
@@ -184,6 +185,7 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .badge-s1       { background: #eef6ff; color: var(--s1); }
 .badge-s2       { background: #e8f6f7; color: var(--s2); }
 .badge-s3       { background: #f0eef8; color: var(--s3); }
+.badge-s4       { background: #f5ede0; color: var(--s4); }
 .badge-rar4     { background: #d4edda; color: #155724; }
 .badge-rar2     { background: #d1f0ec; color: #0e5a4e; }
 .badge-review   { background: #e2e3e5; color: #383d41; }
@@ -343,6 +345,7 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .pub-entry.s1 { border-left-color: var(--s1); }
 .pub-entry.s2 { border-left-color: var(--s2); }
 .pub-entry.s3 { border-left-color: var(--s3); }
+.pub-entry.s4 { border-left-color: var(--s4); }
 .pub-title { font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; line-height: 1.4; }
 .pub-title a { color: var(--text); }
 .pub-title a:hover { color: var(--blue); }

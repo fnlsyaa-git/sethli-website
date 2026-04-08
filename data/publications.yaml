@@ -84,6 +84,33 @@ publications:
     badges: ""
     impact_factor: "7.4"
 
+  # ── INTERDISCIPLINARY ──────────────────────────────────────────────
+  - title: "Sustainability Performance and CSR Disclosure: The Missing Link"
+    authors: "Li, S., Boudreau, M., Huber, M., & Watson, R."
+    venue: "International Journal of Social Ecology & Sustainable Development"
+    year: 2013
+    volume: ""
+    issue: ""
+    doi: ""
+    stream: "s4"
+    status: "published"
+    badges: ""
+    impact_factor: ""
+    award: ""
+
+  - title: "Telematics at UPS: En Route to Energy Informatics"
+    authors: "Watson, R., Boudreau, M., Li, S., & Levis, J."
+    venue: "MIS Quarterly Executive"
+    year: 2010
+    volume: ""
+    issue: ""
+    doi: ""
+    stream: "s4"
+    status: "published"
+    badges: ""
+    impact_factor: ""
+    award: "SIM Best Paper 2009"
+
   # ── WORKING PAPERS ─────────────────────────────────────────────────
   - title: "I Go For That Offbeat Option! Examining Contrarian Behavior in Online Marketplaces"
     authors: "Li, S., Sun, H., Zhao, Q., & Wang, Y."
