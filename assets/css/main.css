@@ -294,7 +294,7 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 }
 .news-icon svg { width: 14px; height: 14px; stroke: var(--blue); fill: none; stroke-width: 2; }
 .news-text { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; flex: 1; }
-.news-date { font-family: var(--font-sans); font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+.news-date { font-family: var(--font-sans); font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
 
 /* =====================================================
    STATS BAR
