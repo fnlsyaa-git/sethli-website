@@ -19,6 +19,8 @@ params:
     citations: "660+"
     editorial: "14"
     editorialNote: "Journals as Reviewer · MISQ · ISR · JAIS · +11 more"
+    ae: "3"
+    aeNote: "MISQ · JAIS · DSS"
   featuredPaper:
     title: "Seems Legit: An Investigation of the Assessing and Sharing of Unverifiable Messages on Online Social Networks"
     authors: "London, J., Li, S., & Sun, H."
