@@ -320,11 +320,19 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .news-icon {
   width: 28px; height: 28px;
   border-radius: 6px;
-  background: #f0f4ff;
+  background: #e8eaed;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.news-icon svg { width: 14px; height: 14px; stroke: var(--blue); fill: none; stroke-width: 2; }
+.news-icon svg { width: 14px; height: 14px; fill: none; stroke-width: 2; stroke: #555; }
+.news-icon-publication          { background: #eef6ff; }
+.news-icon-publication svg      { stroke: var(--blue); }
+.news-icon-award                { background: #fff3cd; }
+.news-icon-award svg            { stroke: #7a5b00; }
+.news-icon-grant                { background: #d4edda; }
+.news-icon-grant svg            { stroke: #155724; }
+.news-icon-service              { background: #ede8f8; }
+.news-icon-service svg          { stroke: var(--s3); }
 .news-text { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; flex: 1; }
 .news-meta { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
 .news-date { font-family: var(--font-sans); font-size: 12px; color: var(--text-secondary); }
@@ -340,6 +348,7 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .news-tag-publication { background: #eef6ff; color: var(--blue); }
 .news-tag-award       { background: #fff3cd; color: #7a5b00; }
 .news-tag-grant       { background: #d4edda; color: #155724; }
+.news-tag-service     { background: #ede8f8; color: var(--s3); }
 .news-tag-default     { background: #e2e3e5; color: #383d41; }
 
 /* =====================================================
@@ -506,7 +515,7 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
    CROSSLINK BOX
    ===================================================== */
 .crosslink-box {
-  background: #f8f9fa;
+  background: var(--bg);
   border-radius: 8px;
   padding: 16px 20px;
   font-family: var(--font-sans);

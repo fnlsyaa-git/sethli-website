@@ -1,8 +1,33 @@
 {{ define "main" }}
 {{ $courses := hugo.Data.courses }}
+{{ $wmSections := 0 }}{{ range $courses.wm.courses }}{{ $wmSections = add $wmSections .sections }}{{ end }}
+{{ $clSections := 0 }}{{ range $courses.clemson.courses }}{{ $clSections = add $clSections .sections }}{{ end }}
+{{ $totalSections := add $wmSections $clSections }}
+{{ $totalCourses  := add (len $courses.wm.courses) (len $courses.clemson.courses) }}
 
 <div class="page-content">
   <div class="container stack stack-24">
+
+    <!-- TEACHING AT A GLANCE -->
+    <div class="card" style="padding:0; overflow:hidden;">
+      <div class="stats-bar" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="stat-item">
+          <div class="stat-number">{{ site.Params.stats.teachingEval }}</div>
+          <div class="stat-label">Avg. Teaching Eval</div>
+          <div class="stat-sublabel">out of 5.0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ $totalSections }}</div>
+          <div class="stat-label">Sections Taught</div>
+          <div class="stat-sublabel">W&M · Clemson</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ $totalCourses }}</div>
+          <div class="stat-label">Distinct Courses</div>
+          <div class="stat-sublabel">analytics · data · BI</div>
+        </div>
+      </div>
+    </div>
 
     <!-- A: TEACHING PHILOSOPHY -->
     <div class="card">
