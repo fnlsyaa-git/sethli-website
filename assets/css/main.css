@@ -247,6 +247,11 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
   box-shadow: var(--shadow);
   padding: 24px;
   border-top: 4px solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stream-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 .stream-card.s1 { border-top-color: var(--s1); }
 .stream-card.s2 { border-top-color: var(--s2); }
@@ -267,6 +272,22 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .stream-card p { font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
 .stream-card-meta { font-family: var(--font-sans); font-size: 13px; color: var(--text); font-weight: 600; margin-bottom: 8px; }
 .stream-card a { font-family: var(--font-sans); font-size: 13px; font-weight: 600; }
+.stream-card-btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1.5px solid;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+}
+.stream-card-btn:hover { text-decoration: none; opacity: 0.75; }
+.s1 .stream-card-btn { border-color: var(--s1); color: var(--s1); }
+.s2 .stream-card-btn { border-color: var(--s2); color: var(--s2); }
+.s3 .stream-card-btn { border-color: var(--s3); color: var(--s3); }
 @media (max-width: 768px) { .stream-cards { grid-template-columns: 1fr; } }
 
 /* =====================================================
@@ -277,12 +298,21 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .featured-paper-title { font-size: 1.1rem; margin-bottom: 6px; line-height: 1.4; }
 .featured-paper-authors { font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); margin-bottom: 3px; }
 .featured-paper-venue { font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); font-style: italic; margin-bottom: 8px; }
+.featured-paper-body {
+  border-left: 4px solid var(--border);
+  padding-left: 16px;
+  margin-top: 12px;
+}
+.featured-paper-body.s1 { border-left-color: var(--s1); }
+.featured-paper-body.s2 { border-left-color: var(--s2); }
+.featured-paper-body.s3 { border-left-color: var(--s3); }
+.featured-paper-body.s4 { border-left-color: var(--s4); }
 .featured-paper-summary {
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px solid var(--border);
 }
 .news-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; }
@@ -296,14 +326,37 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 }
 .news-icon svg { width: 14px; height: 14px; stroke: var(--blue); fill: none; stroke-width: 2; }
 .news-text { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; flex: 1; }
-.news-date { font-family: var(--font-sans); font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+.news-meta { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+.news-date { font-family: var(--font-sans); font-size: 12px; color: var(--text-secondary); }
+.news-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.news-tag-publication { background: #eef6ff; color: var(--blue); }
+.news-tag-award       { background: #fff3cd; color: #7a5b00; }
+.news-tag-grant       { background: #d4edda; color: #155724; }
+.news-tag-default     { background: #e2e3e5; color: #383d41; }
 
 /* =====================================================
    STATS BAR
    ===================================================== */
-.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); }
 .stat-item { text-align: center; padding: 24px 16px; }
 .stat-item + .stat-item { border-left: 1px solid var(--border); }
+.stat-group-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
 .stat-number { font-family: var(--font-sans); font-size: 2.25rem; font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: 6px; }
 .stat-label { font-family: var(--font-sans); font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
 .stat-sublabel { font-family: var(--font-sans); font-size: 11px; color: var(--text-secondary); }

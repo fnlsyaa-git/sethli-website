@@ -57,12 +57,14 @@
           {{ if eq $fp.stream "s3" }}<a href="/research/?stream=s3" class="badge badge-s3">Org Networks</a>{{ end }}
           {{ if $fp.impactFactor }}<span style="font-family:var(--font-sans);font-size:11px;color:var(--text-tertiary);margin-left:4px;">IF: {{ $fp.impactFactor }}</span>{{ end }}
         </div>
-        <h3 class="featured-paper-title">
-          <a href="{{ $fp.doi }}" target="_blank" rel="noopener">{{ $fp.title }}</a>
-        </h3>
-        <div class="featured-paper-authors">{{ $fp.authors }}</div>
-        <div class="featured-paper-venue"><span class="pub-venue-name">{{ $fp.venue }}</span> · {{ $fp.venueDetail }}</div>
-        <div class="featured-paper-summary">{{ $fp.summary }}</div>
+        <div class="featured-paper-body {{ $fp.stream }}">
+          <h3 class="featured-paper-title">
+            <a href="{{ $fp.doi }}" target="_blank" rel="noopener">{{ $fp.title }}</a>
+          </h3>
+          <div class="featured-paper-authors">{{ $fp.authors }}</div>
+          <div class="featured-paper-venue"><span class="pub-venue-name">{{ $fp.venue }}</span> · {{ $fp.venueDetail }}</div>
+          <div class="featured-paper-summary">{{ $fp.summary }}</div>
+        </div>
         <div style="margin-top:16px;">
           <a href="/research/" style="font-family:var(--font-sans);font-size:13px;font-weight:600;">View all research →</a>
         </div>
@@ -71,6 +73,11 @@
       <div class="card">
         <span class="section-label">News &amp; Updates</span>
         {{ range $news }}
+        {{ $tagClass := "news-tag-default" }}
+        {{ $tagLabel := "Update" }}
+        {{ if eq .type "publication" }}{{ $tagClass = "news-tag-publication" }}{{ $tagLabel = "Publication" }}{{ end }}
+        {{ if eq .type "award"       }}{{ $tagClass = "news-tag-award"       }}{{ $tagLabel = "Award"       }}{{ end }}
+        {{ if eq .type "grant"       }}{{ $tagClass = "news-tag-grant"       }}{{ $tagLabel = "Grant"       }}{{ end }}
         <div class="news-item">
           <div class="news-icon">
             {{ if eq .type "award" }}
@@ -85,7 +92,10 @@
           </div>
           <div>
             <div class="news-text">{{ .text }}</div>
-            <div class="news-date">{{ dateFormat "January 2006" .date }}</div>
+            <div class="news-meta">
+              <span class="news-tag {{ $tagClass }}">{{ $tagLabel }}</span>
+              <span class="news-date">{{ dateFormat "January 2006" .date }}</span>
+            </div>
           </div>
         </div>
         {{ end }}
@@ -101,24 +111,22 @@
     <div class="card" style="padding:0; overflow:hidden;">
       <div class="stats-bar">
         <div class="stat-item">
-          <div class="stat-number">{{ $p.stats.teachingEval }}</div>
-          <div class="stat-label">Avg. Teaching Eval</div>
-          <div class="stat-sublabel">{{ $p.stats.teachingNote }}</div>
-        </div>
-        <div class="stat-item">
+          <div class="stat-group-label">Research</div>
           <div class="stat-number">{{ $p.stats.citations }}</div>
           <div class="stat-label">Citations</div>
           <div class="stat-sublabel">{{ $p.stats.citationsNote }}</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">{{ $p.stats.editorial }}</div>
-          <div class="stat-label">Journals Reviewed</div>
-          <div class="stat-sublabel">{{ $p.stats.editorialNote }}</div>
+          <div class="stat-group-label">Teaching</div>
+          <div class="stat-number">{{ $p.stats.teachingEval }}</div>
+          <div class="stat-label">Avg. Teaching Eval</div>
+          <div class="stat-sublabel">{{ $p.stats.teachingNote }}</div>
         </div>
         <div class="stat-item">
+          <div class="stat-group-label">Service</div>
           <div class="stat-number">{{ $p.stats.ae }}</div>
-          <div class="stat-label">Journals as Associate Editor</div>
-          <div class="stat-sublabel">{{ $p.stats.aeNote }}</div>
+          <div class="stat-label">Associate Editor Roles</div>
+          <div class="stat-sublabel">{{ $p.stats.aeNote }} · {{ $p.stats.editorial }} journals reviewed</div>
         </div>
       </div>
     </div>
