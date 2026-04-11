@@ -8,16 +8,17 @@
   --s2:             #1A7A8A;
   --s3:             #5B4A8A;
   --s4:             #7A6040;
-  --bg:             #f5f7fa;
+  --bg:             #f9f9f7;  /* warm paper tone */
+  --surface-low:    #f4f4f2;  /* sub-section tonal layer */
   --card:           #ffffff;
-  --text:           #1a1a2e;
+  --text:           #1a1c1b;  /* warm near-black */
   --text-secondary: #888888;
   --text-tertiary:  #bbbbbb;
   --border:         #e0e4ec;
   --font-sans:      'Inter', system-ui, sans-serif;
   --font-serif:     'Source Serif 4', Georgia, serif;
-  --radius:         10px;
-  --shadow:         0 1px 4px rgba(0,0,0,0.06);
+  --radius:         12px;
+  --shadow:         0 12px 32px rgba(26,28,27,0.04);  /* ambient only */
   --container:      1080px;
 }
 
@@ -25,7 +26,7 @@
    RESET & BASE
    ===================================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 17px; scroll-behavior: smooth; }
+html { font-size: 18px; scroll-behavior: smooth; }
 body {
   font-family: var(--font-serif);
   font-size: 1rem;
@@ -83,7 +84,9 @@ h1, h2, h3, h4 {
    NAVIGATION
    ===================================================== */
 .site-nav {
-  background: var(--card);
+  background: rgba(249,249,247,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -219,18 +222,19 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
    ===================================================== */
 .hero { padding: 48px 0 32px; }
 .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
-.hero-name { font-size: 2.4rem; font-weight: 700; margin-bottom: 4px; }
+.hero-name { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 700; margin-bottom: 4px; line-height: 1.1; }
 .hero-title { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text-secondary); margin-bottom: 2px; }
 .hero-institution { font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
 .hero-tagline {
-  border-left: 3px solid var(--blue);
-  padding-left: 16px;
+  font-size: 1.15rem;
+  font-weight: 300;
   margin-bottom: 24px;
   max-width: 560px;
+  line-height: 1.7;
 }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-photo { margin-right: 20px; }
-.hero-photo img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; }
+.hero-photo img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 8px solid #ffffff; box-shadow: 0 8px 32px rgba(26,28,27,0.14); }
 @media (max-width: 768px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-photo { order: -1; }
