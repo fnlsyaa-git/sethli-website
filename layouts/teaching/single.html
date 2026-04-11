@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $courses := hugo.Data.courses }}
+{{ $quotes  := hugo.Data.quotes.teaching }}
 {{ $wmSections := 0 }}{{ range $courses.wm.courses }}{{ $wmSections = add $wmSections .sections }}{{ end }}
 {{ $clSections := 0 }}{{ range $courses.clemson.courses }}{{ $clSections = add $clSections .sections }}{{ end }}
 {{ $totalSections := add $wmSections $clSections }}
@@ -63,6 +64,21 @@
         </table>
       </div>
     </div>
+
+    <!-- D: STUDENT VOICES -->
+    {{ if $quotes }}
+    <div class="card">
+      <span class="section-label">What Students Say</span>
+      <div class="student-quotes">
+        {{ range $quotes }}
+        <div class="student-quote">
+          <p class="quote-text">&ldquo;{{ .text }}&rdquo;</p>
+          <div class="quote-attr">{{ .course }} &middot; {{ .program }} &middot; {{ .institution }}</div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
 
     <!-- C: CLEMSON -->
     <div class="card">

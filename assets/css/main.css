@@ -451,6 +451,11 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
 .eval-wm      { color: var(--blue); font-weight: 700; }
 .eval-clemson { color: var(--s2);   font-weight: 700; }
 
+.student-quotes { display: flex; flex-direction: column; gap: 16px; margin-top: 4px; }
+.student-quote { padding: 16px 20px; background: var(--surface-low); border-radius: 8px; border: 1px solid var(--border); }
+.quote-text { font-size: 0.95rem; line-height: 1.7; font-style: italic; color: var(--text-primary); margin-bottom: 8px; }
+.quote-attr { font-family: var(--font-sans); font-size: 12px; color: var(--text-secondary); font-weight: 600; }
+
 /* =====================================================
    CV TIMELINE
    ===================================================== */
