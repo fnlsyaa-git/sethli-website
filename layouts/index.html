@@ -80,25 +80,10 @@
         {{ if eq .type "grant"       }}{{ $tagClass = "news-tag-grant"       }}{{ $tagLabel = "Grant"       }}{{ end }}
         {{ if eq .type "service"     }}{{ $tagClass = "news-tag-service"     }}{{ $tagLabel = "Service"     }}{{ end }}
         <div class="news-item">
-          <div class="news-icon news-icon-{{ .type }}">
-            {{ if eq .type "award" }}
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
-            {{ else if eq .type "publication" }}
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-            {{ else if eq .type "grant" }}
-            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-            {{ else if eq .type "service" }}
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            {{ else }}
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            {{ end }}
-          </div>
-          <div>
-            <div class="news-text">{{ .text }}</div>
-            <div class="news-meta">
-              <span class="news-tag {{ $tagClass }}">{{ $tagLabel }}</span>
-              <span class="news-date">{{ dateFormat "January 2006" .date }}</span>
-            </div>
+          <div class="news-text">{{ .text }}</div>
+          <div class="news-meta">
+            <span class="news-tag {{ $tagClass }}">{{ $tagLabel }}</span>
+            <span class="news-date">{{ dateFormat "January 2006" .date }}</span>
           </div>
         </div>
         {{ end }}
