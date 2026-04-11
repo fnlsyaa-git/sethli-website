@@ -2,6 +2,7 @@
 {{ $pubs     := hugo.Data.publications.publications }}
 {{ $published := where $pubs "status" "published" }}
 {{ $working   := where $pubs "status" "ne" "published" }}
+{{ $s4all     := where $pubs "stream" "s4" }}
 {{ $talks     := where hugo.Data.talks.talks "show_on_site" true }}
 {{ $service   := hugo.Data.service }}
 
@@ -40,7 +41,7 @@
           <button class="pub-filter-btn" data-filter="s1"   aria-pressed="false">Digital Platforms</button>
           <button class="pub-filter-btn" data-filter="s2"   aria-pressed="false">Social Networks</button>
           <button class="pub-filter-btn" data-filter="s3"   aria-pressed="false">Org Networks</button>
-          <button class="pub-filter-btn" data-filter="s4"   aria-pressed="false">Interdisciplinary</button>
+          {{ if $s4all }}<button class="pub-filter-btn" data-filter="s4"   aria-pressed="false">Interdisciplinary</button>{{ end }}
         </div>
       </div>
 

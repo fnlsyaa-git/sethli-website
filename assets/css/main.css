@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
    ===================================================== */
 .section-label {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--green);
   letter-spacing: 0.06em;
@@ -230,9 +230,9 @@ a.badge:hover { text-decoration: none; opacity: 0.8; }
    ===================================================== */
 .hero { padding: 48px 0 32px; }
 .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
-.hero-name { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 700; margin-bottom: 4px; line-height: 1.1; }
-.hero-title { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text-secondary); margin-bottom: 2px; }
-.hero-institution { font-family: var(--font-sans); font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
+.hero-name { font-family: 'Lora', serif; font-size: 3.5rem; font-weight: 700; margin-bottom: 4px; line-height: 1.1; }
+.hero-title { font-family: var(--font-sans); font-size: 17px; font-weight: 600; color: var(--green); margin-bottom: 2px; }
+.hero-institution { font-family: var(--font-sans); font-size: 15px; color: var(--green); margin-bottom: 20px; }
 .hero-tagline {
   font-size: 1.15rem;
   font-weight: 300;
