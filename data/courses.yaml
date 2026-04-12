@@ -17,7 +17,7 @@ wm:
     - code: "BUAD5762"
       title: "Business Analytics Capstone"
       levels: "MSBA · OMSBA"
-      sections: 1
+      sections: 2
       avg_eval: "4.75"
       max_eval: "5.0"
     - code: "BUAD466"
