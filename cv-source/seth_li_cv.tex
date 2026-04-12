@@ -13,13 +13,12 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
-\usepackage{parskip}
-
 % ── Colors & spacing ──────────────────────────────────────────────────────────
 \definecolor{headcolor}{RGB}{17, 87, 64}   % W&M Forest Green
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\raggedbottom
 
 % ── Section heading ───────────────────────────────────────────────────────────
 \newcommand{\cvsection}[1]{%
@@ -37,7 +36,7 @@
 % ── Sub-block heading within a section (e.g. Associate Editor, Editorial Board)
 \newcommand{\cvsubblock}[1]{%
   \vspace{7pt}%
-  {\bfseries #1}\\[-2pt]%
+  \noindent{\bfseries #1}\par\nobreak%
 }
 
 % ── Publication list: numbered ────────────────────────────────────────────────
