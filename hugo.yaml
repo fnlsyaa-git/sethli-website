@@ -15,7 +15,7 @@ params:
   cvFile: "/cv/seth_li_cv.pdf"
   stats:
     papers: "10"
-    teachingEval: "4.8"
+    teachingEval: "4.6"
     teachingNote: "out of 5.0 · 34 sections"
     citations: "660+"
     citationsNote: "Google Scholar"
