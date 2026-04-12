@@ -19,6 +19,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
 
 % ── Section heading ───────────────────────────────────────────────────────────
 \newcommand{\cvsection}[1]{%
@@ -47,6 +49,7 @@
   itemsep=4pt,
   parsep=0pt,
   topsep=2pt,
+  before={\interlinepenalty=10000},
 }
 
 % ── Simple numbered list ──────────────────────────────────────────────────────
@@ -58,6 +61,7 @@
   parsep=0pt,
   topsep=0pt,
   partopsep=0pt,
+  before={\interlinepenalty=10000},
 }
 
 % ── Teaching row: course + stats on one line ──────────────────────────────────
