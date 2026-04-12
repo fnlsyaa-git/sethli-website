@@ -1,0 +1,340 @@
+%% Seth Li — Curriculum Vitae
+%% Source file — edit here, compile with pdflatex, output goes to static/cv/seth_li_cv.pdf
+%% Last updated: March 2026
+
+\documentclass[11pt, letterpaper]{article}
+
+% ── Packages ──────────────────────────────────────────────────────────────────
+\usepackage[margin=1in, top=0.80in, bottom=0.80in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{parskip}
+
+% ── Colors & spacing ──────────────────────────────────────────────────────────
+\definecolor{headcolor}{RGB}{17, 87, 64}   % W&M Forest Green
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ── Section heading ───────────────────────────────────────────────────────────
+\newcommand{\cvsection}[1]{%
+  \vspace{14pt}%
+  {\large\bfseries\color{headcolor}\MakeUppercase{#1}}%
+  \vspace{2pt}\hrule\vspace{6pt}%
+}
+
+% ── Subsection (institution / role group) ─────────────────────────────────────
+\newcommand{\cvsubsection}[2]{%
+  \vspace{4pt}%
+  {\bfseries #1}\hfill{\small #2}\\[-2pt]%
+}
+
+% ── Publication list: hanging indent ──────────────────────────────────────────
+\newlist{publist}{enumerate}{1}
+\setlist[publist]{
+  label={},
+  leftmargin=1.5em,
+  itemindent=-1.5em,
+  itemsep=4pt,
+  parsep=0pt,
+  topsep=2pt,
+}
+
+% ── Simple bullet list ────────────────────────────────────────────────────────
+\newlist{cvlist}{itemize}{1}
+\setlist[cvlist]{
+  label={},
+  leftmargin=1.5em,
+  itemindent=-1.5em,
+  itemsep=3pt,
+  parsep=0pt,
+  topsep=2pt,
+}
+
+% ── Teaching row: course + stats on one line ──────────────────────────────────
+\newcommand{\course}[3]{%
+  \hspace{1.5em}#1\hfill{\small #2 \textbar\ Avg.\ eval:\ #3}\\[1pt]%
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+\pagestyle{empty}
+
+% ── Header ────────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Siyuan (Seth) Li}\\[6pt]
+  {\normalsize
+    Dorman Family Distinguished Associate Professor\\
+    Raymond A.\ Mason School of Business, William \& Mary\\[4pt]
+    101 Ukrop Way, Williamsburg, VA 23185\\
+    \href{mailto:seth.li@mason.wm.edu}{seth.li@mason.wm.edu}
+    \quad|\quad
+    \href{https://www.sethli.net}{www.sethli.net}
+    \quad|\quad
+    \href{https://orcid.org/0000-0002-0336-9220}{ORCID: 0000-0002-0336-9220}
+  }
+\end{center}
+
+\vspace{4pt}\hrule\vspace{2pt}
+
+% ── Academic Positions ────────────────────────────────────────────────────────
+\cvsection{Academic Positions}
+
+\cvsubsection{Raymond A.\ Mason School of Business, William \& Mary}{}
+\hspace{1.5em}Dorman Family Distinguished Associate Professor \hfill 2024--Present\\
+\hspace{1.5em}Assistant Professor \hfill 2018--2024\\[4pt]
+
+\cvsubsection{College of Business, Clemson University}{}
+\hspace{1.5em}Assistant Professor \hfill 2014--2018\\
+\hspace{1.5em}Visiting Assistant Professor \hfill 2013--2014\\
+
+% ── Education ─────────────────────────────────────────────────────────────────
+\cvsection{Education}
+
+\cvsubsection{Terry College of Business, The University of Georgia}{Athens, GA}
+\hspace{1.5em}Ph.D.\ in Management Information Systems \hfill 2008--2013\\
+\hspace{1.5em}{\small Advisor: Dr.\ Elena Karahanna}\\[4pt]
+
+\cvsubsection{Business School, Hong Kong University of Science and Technology}{Hong Kong}
+\hspace{1.5em}B.B.A.\ in Management Information Systems and Finance \hfill 2002--2006\\
+\hspace{1.5em}{\small First Class Honors}\\
+
+% ── Journal Publications ──────────────────────────────────────────────────────
+\cvsection{Journal Publications}
+
+{\small\textit{FT50 = Top 50 Journals per Financial Times Research Ranking; IF = Five-Year Impact Factor}}
+
+\vspace{4pt}
+\begin{publist}
+  \item Sun, H., Li, S., Tseng, S., \& Peterson, M. (2025). Virtual Reality, Mental Models, and Mindful Decision-Making. \textit{Journal of the Association for Information Systems}, 26(4), 1166--1196. (IF: 7.4)
+
+  \item London, J., Li, S., \& Sun, H. (2022). Seems Legit: An Investigation of the Assessing and Sharing of Unverifiable Messages on Online Social Networks. \textit{Information Systems Research}, 33(3), 978--1001. (\textbf{FT50}; IF: 9.2)
+
+  \item Li, S., Qu, T., \& Yu, Y. (2022). Outside Director Social Network Centrality and Turnover Before Stock Performance Crash: A Friend in Need? \textit{Journal of Corporate Finance}, 76, Article 102280. (IF: 5.9)
+
+  \item Deng, H., Wang, W., Li, S., \& Lim, K. (2022). Can Positive Online Social Cues Always Reduce User Avoidance of Sponsored Search Results? \textit{MIS Quarterly}, 46(1). (\textbf{FT50}; IF: 11.0)
+
+  \item Pu, W., Li, S., Bott, G., Esposito, M., \& Thatcher, J. (2022). To Disclose or Not to Disclose: An Evaluation of the Effects of Information Control and Social Network Transparency. \textit{Computers \& Security}, 112. (IF: 5.4)
+
+  \item Scott, K., Zagenczyk, T., Li, S., Gardner, W., Cogliser, C., \& Laverie, D. (2018). Social Network Ties and Organizational Citizenship Behavior: Evidence of A Curvilinear Relationship. \textit{European Journal of Work and Organizational Psychology}, 27(6), 752--763. (IF: 5.7)
+
+  \item Li, S., \& Karahanna, E. (2015). Online Recommendation Systems in a B2C E-Commerce Context: A Review and Future Directions. \textit{Journal of the Association for Information Systems}, 16(2). (IF: 7.4)
+
+  \item Li, S., Boudreau, M., Huber, M., \& Watson, R. (2013). Sustainability Performance and CSR Disclosure: The Missing Link. \textit{International Journal of Social Ecology \& Sustainable Development}, 4(2).
+
+  \item Watson, R., Boudreau, M., Li, S., \& Levis, J. (2010). Telematics at UPS: En Route to Energy Informatics. \textit{MIS Quarterly Executive}, 9(1).
+  {\small\\\hspace{1.5em}\textit{Best Paper Award} (1st Place, SIM Best Paper Award Competition, 2009)}
+\end{publist}
+
+% ── Working Papers ────────────────────────────────────────────────────────────
+\cvsection{Working Papers}
+
+\begin{publist}
+  \item Li, S., Sun, H., Zhao, Q., \& Wang, Y. ``I Go For That Offbeat Option! Examining Contrarian Behavior in Online Marketplaces.'' Under 4th-round review, \textit{MIS Quarterly}.
+
+  \item Zhao, E., Shea, C., \& Li, S. ``How Pre-existing Relationships between New Team Members Affect Individual and Team Performance.'' Under 2nd-round R\&R, \textit{Organization Science}.
+
+  \item Li, S., Sun, H., Wang, W., \& Zou, H. ``To Follow or Not to Follow? Examining Online Herd Cues' Effect on Herd Behavior.'' Under 2nd-round R\&R, \textit{Journal of the Association for Information Systems}.
+
+  \item Wang, Y., Zhao, Q., \& Li, S. ``To Craft or Not to Craft? The Impact of Algorithmic Knowledge on Creators' Creative Behavior.'' Under review, \textit{Information Technology and People}.
+
+  \item Li, S.\ \& Kohli, R. ``Bridging the Social Divide: How Generative AI Can Foster Understanding and Reduce Polarization.'' Work-in-progress.
+\end{publist}
+
+% ── Presentations ─────────────────────────────────────────────────────────────
+\cvsection{Presentations and Conference Proceedings}
+
+\begin{publist}
+  \item Li, S.\ \& Kohli, R. (2026). ``Information Systems and Social Divide: How Large Language Models Moderate Polarization.'' Virginia Research Seminar Series, George Mason University.
+
+  \item Zhao, E., Shea, C., \& Li, S. (2026). ``Shared Histories in New Teams: The Effect of Pre-Existing Relationships on Performance.'' IACM 2026, Vienna, Austria.
+
+  \item Li, S.\ \& Kohli, R. (2025). ``Bridging the Social Divide: How Generative AI Can Foster Understanding and Reduce Polarization.'' Brownbag Series, Mason School of Business, William \& Mary.
+
+  \item Zhao, E., Shea, C., \& Li, S. (2024). ``How Pre-existing Relationships between New Team Members Affect Individual and Team Performance.'' IACM 2024, Singapore.
+
+  \item Li, S., Shen, R., \& Yu, Y. (2023). ``Does Corporate ESG Disclosure Spillover Through Board Interlocks?'' Brownbag Series, Mason School of Business, William \& Mary.
+
+  \item Shea, C., Li, S., \& Zhao, E. (2022). ``Familiar Faces in New Places: How Pre-existing Relationships between New Team Members Affect Individual and Team Performance.'' 82nd Annual Meeting of the Academy of Management, Seattle, WA (Showcase Symposium).
+
+  \item Kohli, R.\ \& Li, S. (2021). ``Economic Rationality and Strategy: How Institutional Logics Explain ACO's Pursuit of Healthcare Cost-savings.'' Brownbag Series, Mason School of Business, William \& Mary.
+
+  \item Kohli, R.\ \& Li, S. (2021). ``Learning to be Rational: Economic Rationality among Accountable Care Organizations.'' Virginia Research Seminar Series, George Mason University.
+
+  \item Jia, L.\ \& Li, S. (2020). ``Peer Effects on Knowledge Contribution Behaviors.'' 2020 INFORMS Annual Meeting, Virtual.
+
+  \item Tofangchi, S., Hanelt, A., \& Li, S. (2019). ``Advancing Recommendations on Two-Sided Platforms: A Machine Learning Approach to Context-Aware Profiling.'' ICIS 2019, Munich, Germany.
+
+  \item Li, S.\ \& Sun, H. (2019). ``Herd Booster: Examine the Impact of Product and Recommendation Type on Herd Behavior.'' SIG-DIGIT, ICIS 2019, Munich, Germany.
+
+  \item Wade, J., Li, S., Pu, W., \& Thatcher, J. (2018). ``Turning the Negative Affiliation Around: Looking Glass Self in Online Community Platforms.'' ICIS 2018, San Francisco, CA.
+
+  \item Purvis, R.\ \& Li, S. (2018). ``The Development of Psychological Climate within IS Development Projects and Its Impact on IS Development Project Performance.'' ECIS 2018, Portsmouth, UK.
+
+  \item Scott, K., Zagenczyk, T., Li, S., Gardner, W., Cogliser, C., \& Laverie, D. (2017). ``Citizenship Behavior of Included and Excluded Employees: Evidence of a Curvilinear Relationship.'' 77th Annual Meeting of the Academy of Management, Atlanta, GA (\textit{Best Accepted Paper}).
+
+  \item Pu, W., Li, S., \& Thatcher, J. (2017). ``Self-disclosure and SNS Platforms: The Impact of SNS Transparency.'' ICIS 2017, Seoul, South Korea.
+
+  \item Scott, K., Zagenczyk, T., \& Li, S. (2017). ``Social Network Ties and Organizational Citizenship Behavior: A Social Network Analysis.'' 32nd Annual Conference of the SIOP, Orlando, FL.
+
+  \item Pu, W., Li, S., \& Thatcher, J. (2016). ``Self-disclosure and SNS Platforms: The Impact of SNS Transparency and Culture.'' SIG-DIGIT, ICIS 2016, Dublin, Ireland.
+
+  \item Pu, W., Li, S., \& Thatcher, J. (2016). ``Self-disclosure and SNS Platforms: The Impact of Transparency, Accountability, and Culture.'' AMCIS 2016, San Diego, CA.
+
+  \item Li, S.\ \& Sun, H. (2015). ``The Role of System Type in Herd Behavior in User Adoption and Continuance of Technology.'' ICIS 2015, Fort Worth, TX.
+
+  \item Li, S.\ \& Karahanna, E. (2012). ``Peer-based Recommendations in Online B2C E-Commerce: Comparing Collaborative Personalization and Social Network-based Personalization.'' HICSS 2012, Maui, HI.
+
+  \item Li, S., Boudreau, M., \& Watson, R. (2011). ``Why Organizations Have Different Levels of Sustainability Disclosure: A Study of CSR Quality in the IT Industry.'' 54th ASAC, Montr\'{e}al, QC, Canada.
+
+  \item Watson, R., Williamson, T., Boudreau, M., \& Li, S. (2011). ``Business Canvas for Energy Informatics.'' SIG Green, ICIS 2011, Saint Louis, MO.
+\end{publist}
+
+% ── Teaching ──────────────────────────────────────────────────────────────────
+\cvsection{Teaching Experience}
+
+\cvsubsection{William \& Mary}{2018--Present}
+\course{BUAD467 Predictive Analytics (BBA)}{2 sections}{in progress}
+\course{BUAD466 Developing Business Intelligence (BBA)}{5 sections}{4.51/5}
+\course{BUAD5762 Business Analytics Capstone (MSBA, OMSBA)}{2 sections}{4.81/5}
+\course{BUAD5732 Data Visualization (MSBA)}{6 sections}{4.82/5}
+\course{BUAD6271 Data Management (FT-MBA, PT-MBA, OMSBA)}{9 sections}{4.85/5}
+\course{BUAD6971 MBA Independent Studies (MBA)}{1 section}{5.00/5}
+
+\vspace{4pt}
+\cvsubsection{Clemson University}{2013--2018}
+\course{MGT3500 Introduction to Business Analytics (BBA)}{7 sections}{4.50/5}
+\course{MGT4560 Business Data Management (BBA)}{8 sections}{4.60/5}
+\course{MGT3180 Introduction to Information Systems (BBA)}{1 section}{4.30/5}
+\course{MGT8990 PhD Independent Studies}{1 section}{5.00/5}
+
+\vspace{4pt}
+\cvsubsection{University of Georgia}{2010--2013}
+\course{MIST4600 Computer Programming in Business (BBA)}{2 sections}{4.3/5}
+\course{MIST4620 System Analysis and Design (BBA)}{4 sections}{4.5/5}
+\course{MIST5620 Business Intelligence (BBA)}{1 section}{4.3/5}
+
+% ── Research Grants ───────────────────────────────────────────────────────────
+\cvsection{Research Grants}
+
+\begin{publist}
+  \item Li, S.\ \& Kohli, R. (2024). AI Initiatives Grant, Raymond A.\ Mason School of Business, William \& Mary. Award: \$4,000.
+
+  \item Li, S. (2021--2024). Summer Research Grant, Raymond A.\ Mason School of Business, William \& Mary. Award: \$20,000/year.
+
+  \item Li, S., Qu, T., \& Yu, Y. (2014). ``Outsider Information for Insider Trading: A Social Network Analysis.'' Singapore Ministry of Education, Tier 1 Grant (MOE2014-T1-001-240). Award: S\$79,960 (${\sim}$US\$64,000). Competitively reviewed national external grant.
+\end{publist}
+
+% ── Professional Services ─────────────────────────────────────────────────────
+\cvsection{Professional Services --- External}
+
+\textbf{Associate Editor}
+\begin{cvlist}
+  \item MIS Quarterly, 2026--present
+  \item Journal of the Association for Information Systems, 2026--present
+  \item Decision Support Systems, 2025--present
+\end{cvlist}
+
+\textbf{Editorial Board}
+\begin{cvlist}
+  \item AIS Transactions on Human-Computer Interaction (THCI), 2025--present
+  \item Journal of the Association for Information Systems, 2024--2026
+\end{cvlist}
+
+\textbf{Mini Track Chair}
+\begin{cvlist}
+  \item Global Development Track. Americas Conference on Information Systems, Virtual, 2020
+  \item Global Development Track. Americas Conference on Information Systems, Canc\'{u}n, Mexico, 2019
+  \item ICTs in Global Development Track. Americas Conference on Information Systems, New Orleans, 2018
+\end{cvlist}
+
+\textbf{Conference Associate Editor}
+\begin{cvlist}
+  \item IS Innovation, Adoption and Diffusion Track. ECIS, Milan, Italy, 2026
+  \item IS Innovation, Adoption and Diffusion Track. ECIS, Amman, Jordan, 2025
+  \item IT Implementation and Adoption Track. ICIS, Bangkok, Thailand, 2024
+  \item IS Innovation, Adoption and Diffusion Track. ECIS, Paphos, Cyprus, 2024
+  \item Social Impact of IS Track. ICIS, Hyderabad, India, 2023
+  \item Governance, Strategy and Value of IS Track. ICIS, Virtual, 2020
+  \item Cognition and Human Behavior in IS Track. ECIS, Marrakech, Morocco, 2020
+  \item Human Computer Interaction Track. PACIS, Dubai, UAE, 2020
+  \item Human Behavior and IS Track. ICIS, Munich, Germany, 2019
+  \item Cognition and Human Behavior in IS Track. ECIS, Stockholm, Sweden, 2019
+  \item Human Behavior and IS Track. ICIS, San Francisco, CA, 2018
+  \item Human Behavior and IS Track. ICIS, Seoul, South Korea, 2017
+  \item Sustainability and Societal Impacts of IS Track. ICIS, Dublin, Ireland, 2016
+  \item E-Business and E-Government Track. PACIS, Chiayi, Taiwan, 2016
+  \item Sustainability and Societal Impacts of IS Track. ICIS, Fort Worth, TX, 2015
+\end{cvlist}
+
+\textbf{Session Chair}
+\begin{cvlist}
+  \item Human Computer Interaction Track. ICIS, Bangkok, Thailand, 2024
+  \item IT Implementation Track. ICIS, India (virtual), 2020
+  \item Human Behavior and IS Track. ICIS, Seoul, South Korea, 2017
+  \item IS Adoption and Diffusion Session. PACIS, Singapore, 2015
+  \item Evolution and Appropriation in IS Perceptions and Utilization II Session. ICIS, Auckland, New Zealand, 2014
+\end{cvlist}
+
+\textbf{Reviewer}
+\begin{cvlist}
+  \item \textit{Journals:} MIS Quarterly, Information Systems Research, Journal of Management Information Systems, Journal of the Association for Information Systems, Journal of Strategic Information Systems, Information \& Management, Information Systems Journal, Information Systems Frontiers, Information Technology \& People, Internet Research, Journal of Industrial Ecology, Database, Decision Science, Decision Support Systems
+  \item \textit{Conferences:} ICIS, AMCIS, ECIS, HICSS, PACIS
+\end{cvlist}
+
+\cvsection{Professional Services --- Internal}
+
+\textbf{Service at William \& Mary}
+\begin{cvlist}
+  \item Research Brownbag Series Coordinator, 2023--2024
+  \item Research Committee, Mason School of Business, 2022--2024
+  \item Business Research Subject Participation System (SONA) Coordinator, 2021--2022, 2025--present
+  \item First-Year Undergraduate Student Advisor, 2019--2023
+  \item Faculty Search Committee, 2019, 2020, 2022
+  \item Research Digest Editor, 2020
+  \item Independent Study Advisor, 2020
+\end{cvlist}
+
+\textbf{Service at Clemson University}
+\begin{cvlist}
+  \item Business Analytics Curriculum Developer for Undergraduate and Graduate Programs, 2014--2016
+  \item Consultant, AIS SAP Competition, University of Indiana, 2016
+  \item Case Leader, CoMIS Case Competition, University of Minnesota, 2015
+  \item PhD Dissertation Committee, 2016--2018
+  \item Faculty Search Committee, 2014--2017
+  \item PhD Recruitment Committee, 2015--2017
+  \item Research Workshop Coordinator, 2014
+\end{cvlist}
+
+% ── Awards ────────────────────────────────────────────────────────────────────
+\cvsection{Academic Awards and Honors}
+
+\begin{cvlist}
+  \item Best Reviewer of The Year (2024), Journal of the Association for Information Systems
+  \item Best Reviewer Award (2023), AIS Transactions on Human-Computer Interaction
+  \item Dean's Research Fellow (2021--2025), Mason School of Business, William \& Mary
+  \item Best Accepted Paper (2017), 77th Annual Meeting of the Academy of Management, Atlanta, GA
+  \item Doctoral Teaching Award for Outstanding Teaching (2013), Department of MIS, University of Georgia
+  \item 1st Place, SIM Best Paper Award Competition (2009), Society for Information Management
+  \item Influencer on a Class of 2020 Graduate, Cohen Career Center, William \& Mary
+  \item Etheredge Scholarship (2008--2011), Terry College of Business, University of Georgia
+\end{cvlist}
+
+% ── Additional Training ───────────────────────────────────────────────────────
+\cvsection{Additional Training}
+
+Completion Certificate, Social Network Analysis Training Workshop, LINKS Center, University of Kentucky, July 5--10, 2011
+
+% ── Memberships ───────────────────────────────────────────────────────────────
+\cvsection{Professional Memberships}
+
+Association for Information Systems (AIS)\\
+AIS Special Interest Group on Adoption and Diffusion of Information Technology (SIGADIT)\\
+AIS Special Interest Group on Human Computer Interactions (SIGHCI)
+
+\end{document}

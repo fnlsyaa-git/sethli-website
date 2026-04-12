@@ -14,6 +14,15 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Compile CV (LaTeX → PDF)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: seth_li_cv.tex
+          working_directory: cv-source
+
+      - name: Copy CV PDF to static folder
+        run: cp cv-source/seth_li_cv.pdf static/cv/seth_li_cv.pdf
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         env:
