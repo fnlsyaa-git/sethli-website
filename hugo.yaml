@@ -48,6 +48,3 @@ menu:
     - name: CV
       url: /cv/
       weight: 4
-    - name: Contact
-      url: /contact/
-      weight: 5
